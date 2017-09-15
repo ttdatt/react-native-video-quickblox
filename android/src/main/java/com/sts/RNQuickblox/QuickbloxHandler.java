@@ -32,10 +32,10 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
 
     private static final String TAG = QuickbloxHandler.class.getSimpleName();
 
-    static final String APP_ID = "53525";
-    static final String AUTH_KEY = "PLmye3xQsJ3-Gsr";
-    static final String AUTH_SECRET = "TUDPphBZK7r5dVY";
-    static final String ACCOUNT_KEY = "6XDmKdXBfwPuJsWv9Fxp";
+    static final String APP_ID = "1111";
+    static final String AUTH_KEY = "1111";
+    static final String AUTH_SECRET = "1111";
+    static final String ACCOUNT_KEY = "1111";
 
     private static QuickbloxHandler instance;
     private ReactApplicationContext reactApplicationContext;
@@ -67,17 +67,17 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
     private QuickbloxRemoteVideoViewManager remoteVideoViewManager;
 
 
-    public QuickbloxClient getQuickbloxClient() {
+    public RNQuickbloxModule getQuickbloxClient() {
         return quickbloxClient;
     }
 
-    public void setQuickbloxClient(QuickbloxClient quickbloxClient, ReactApplicationContext rctCtx) {
+    public void setQuickbloxClient(RNQuickbloxModule quickbloxClient, ReactApplicationContext rctCtx) {
         this.quickbloxClient = quickbloxClient;
         reactApplicationContext = rctCtx;
         this.setupQuickblox();
     }
 
-    private QuickbloxClient quickbloxClient;
+    private RNQuickbloxModule quickbloxClient;
 
 
     public QBRTCSession getSession() {

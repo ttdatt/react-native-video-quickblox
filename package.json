@@ -7,11 +7,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:ttdat89/react-native-video-quickblox.git"
+  },
   "keywords": [
-    "react-native"
+    "react-native-video-quickblox",
+    "quickblox",
+    "video call"
   ],
-  "author": "",
-  "license": "",
+  "author": "Dat Tran",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttdat89/react-native-video-quickblox/issues"
+  },
+  "homepage": "https://github.com/ttdat89/react-native-video-quickblox/blob/master/README.md",
   "peerDependencies": {
     "react-native": "^0.41.2"
   }
