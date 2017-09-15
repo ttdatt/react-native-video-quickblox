@@ -1,0 +1,39 @@
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.3"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://github.com/QuickBlox/quickblox-android-sdk-releases/raw/master/" }
+}
+
+dependencies {
+    compile 'com.quickblox:quickblox-android-sdk-videochat-webrtc:3.3.0'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.facebook.react:react-native:+'
+}
+  
