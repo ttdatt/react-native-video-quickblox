@@ -15,6 +15,7 @@ import Calling from './Calling'
 import QuickbloxManager from './QuickbloxManager'
 import ContactList from './ContactList';
 import VideoCalling from './VideoCalling';
+import Login from './Login';
 
 export default class TestLibQuickblox extends Component {
 
@@ -25,21 +26,20 @@ export default class TestLibQuickblox extends Component {
       calling: false
     }
 
-    this.quickbloxManager = new QuickbloxManager(this)
+    this.quickbloxManager = new QuickbloxManager()
     this.quickbloxManager.init()
+    this.quickbloxManager.addSubscriber(this)
 
     Platform.OS === 'android' && requestPermissions()
   }
 
   receiveCall() {
+    this.quickbloxManager.acceptCall()
     this.setState({calling: true})
   }
 
   render() {
-    return !this.state.calling ? <ContactList callUser={() => {
-      this.setState({calling: true})
-    }}/>
-      : <VideoCalling/>
+    return !this.state.calling ? <Login callSuccess={() => this.setState({calling: true})}/> : <VideoCalling/>
   }
 }
 

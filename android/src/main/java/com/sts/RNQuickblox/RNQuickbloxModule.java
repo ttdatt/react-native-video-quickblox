@@ -174,7 +174,7 @@ public class RNQuickbloxModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void hangup() {
+    public void hangUp() {
         Map<String, String> userInfo = new HashMap<>();
         userInfo.put("key", "value");
         QuickbloxHandler.getInstance().getSession().hangUp(userInfo);

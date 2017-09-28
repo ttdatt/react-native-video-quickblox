@@ -17,22 +17,35 @@ const QuickbloxModule = new NativeEventEmitter(RNQuickblox);
 let instance = null;
 
 export default class QuickbloxManager {
-  constructor(subscriber) {
+  constructor() {
     if (!instance) {
       instance = this;
-      this.subscriber = subscriber
+      this.subscriber = []
       this.registerEvents()
     }
 
     return instance;
   }
 
-  // static get instance() {
-  //     return new QuickbloxManager();
-  // }
-
   init() {
+    // do something
+  }
 
+  addSubscriber(subscriber) {
+    this.subscriber.push(subscriber)
+  }
+
+  registerEvents() {
+    QuickbloxModule.addListener(
+      RNQuickblox.DID_RECEIVE_CALL_SESSION, this.receiveCall.bind(this));
+    QuickbloxModule.addListener(
+      RNQuickblox.USER_ACCEPT_CALL, this.userAcceptCall.bind(this));
+    QuickbloxModule.addListener(
+      RNQuickblox.USER_REJECT_CALL, this.userRejectCall.bind(this));
+    QuickbloxModule.addListener(
+      RNQuickblox.SESSION_DID_CLOSE, this.sessionDidClose.bind(this));
+    QuickbloxModule.addListener(
+      RNQuickblox.USER_HUNG_UP, this.userHungUp.bind(this));
   }
 
   getUsers(complete) {
@@ -54,29 +67,20 @@ export default class QuickbloxManager {
   }
 
   hangUp() {
-    RNQuickblox.hangup()
+    RNQuickblox.hangUp()
   }
 
   callUsers(userIds: Array, callId, realName, avatar) {
     RNQuickblox.callToUsers(userIds, callId, realName, avatar)
   }
 
-  registerEvents() {
-    QuickbloxModule.addListener(
-      RNQuickblox.DID_RECEIVE_CALL_SESSION, this.receiveCall.bind(this));
-    QuickbloxModule.addListener(
-      RNQuickblox.USER_ACCEPT_CALL, this.userAcceptCall.bind(this));
-    QuickbloxModule.addListener(
-      RNQuickblox.USER_REJECT_CALL, this.userRejectCall.bind(this));
-    QuickbloxModule.addListener(
-      RNQuickblox.SESSION_DID_CLOSE, this.sessionDidClose.bind(this));
-    QuickbloxModule.addListener(
-      RNQuickblox.USER_HUNG_UP, this.hungUp.bind(this));
+  acceptCall() {
+    RNQuickblox.acceptCall()
   }
 
   receiveCall() {
-    this.subscriber.receiveCall()
-    RNQuickblox.acceptCall()
+    this.subscriber.forEach(sub => sub.receiveCall())
+
     // store.dispatch({type: SET_IN_COMING_CALL_MODAL})
   }
 
@@ -95,8 +99,8 @@ export default class QuickbloxManager {
     // this.store.dispatch({type: SESSION_DID_CLOSE})
   }
 
-  hungUp() {
-    console.log('hungUp')
+  userHungUp() {
+    console.log('hangup')
     // this.store.dispatch({type: USER_HUNG_UP})
   }
 }
