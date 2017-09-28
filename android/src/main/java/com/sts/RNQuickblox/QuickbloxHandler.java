@@ -9,6 +9,7 @@ import com.quickblox.chat.QBSignaling;
 import com.quickblox.chat.QBWebRTCSignaling;
 import com.quickblox.chat.listeners.QBVideoChatSignalingManagerListener;
 import com.quickblox.users.model.QBUser;
+import com.quickblox.videochat.webrtc.BaseSession;
 import com.quickblox.videochat.webrtc.QBRTCClient;
 import com.quickblox.videochat.webrtc.QBRTCConfig;
 import com.quickblox.videochat.webrtc.QBRTCSession;
@@ -28,14 +29,14 @@ import java.util.Map;
  * Created by sts on 3/22/17.
  */
 
-public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientVideoTracksCallbacks, QBRTCSessionConnectionCallbacks {
+public class QuickbloxHandler implements QBRTCClientVideoTracksCallbacks<QBRTCSession>, QBRTCSessionConnectionCallbacks {
 
     private static final String TAG = QuickbloxHandler.class.getSimpleName();
 
-    static final String APP_ID = "1111";
-    static final String AUTH_KEY = "1111";
-    static final String AUTH_SECRET = "1111";
-    static final String ACCOUNT_KEY = "1111";
+    static final String APP_ID = "44519";
+    static final String AUTH_KEY = "YqHTqrJPDkAzht3";
+    static final String AUTH_SECRET = "fgYy8K3hL6LKHaS";
+    static final String ACCOUNT_KEY = "6XDmKdXBfwPuJsWv9Fxp";
 
     private static QuickbloxHandler instance;
     private ReactApplicationContext reactApplicationContext;
@@ -113,7 +114,7 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
 
     private void setupQuickblox() {
         //        QBSettings.getInstance().init(getApplicationContext(), APP_ID, AUTH_KEY, AUTH_SECRET);
-        QBSettings.getInstance().init(reactApplicationContext.getApplicationContext(), APP_ID, AUTH_KEY, AUTH_SECRET);
+        QBSettings.getInstance().init(reactApplicationContext, APP_ID, AUTH_KEY, AUTH_SECRET);
         QBSettings.getInstance().setAccountKey(ACCOUNT_KEY);
 
         QBChatService.setDebugEnabled(true);
@@ -121,20 +122,17 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
     }
 
     public void init() {
-
-
-//        QBVideoChatWebRTCSignalingManager qbVideoChatWebRTCSignalingManager = QBChatService.getInstance().getVideoChatWebRTCSignalingManager();
         QBChatService.getInstance().getVideoChatWebRTCSignalingManager()
                 .addSignalingManagerListener(new QBVideoChatSignalingManagerListener() {
                     @Override
                     public void signalingCreated(QBSignaling qbSignaling, boolean createdLocally) {
                         if (!createdLocally) {
-                            QBRTCClient.getInstance(reactApplicationContext.getApplicationContext()).addSignaling((QBWebRTCSignaling) qbSignaling);
+                            QBRTCClient.getInstance(reactApplicationContext).addSignaling(qbSignaling);
                         }
                     }
                 });
 
-        QBRTCClient.getInstance(reactApplicationContext.getApplicationContext()).addSessionCallbacksListener(new QBRTCClientSessionCallbacks() {
+        QBRTCClient.getInstance(reactApplicationContext).addSessionCallbacksListener(new QBRTCClientSessionCallbacks() {
             @Override
             public void onReceiveNewSession(QBRTCSession qbrtcSession) {
 
@@ -188,7 +186,7 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
             }
         });
 
-        QBRTCClient.getInstance(reactApplicationContext.getApplicationContext()).prepareToProcessCalls();
+        QBRTCClient.getInstance(reactApplicationContext).prepareToProcessCalls();
     }
 
     public static QuickbloxHandler getInstance() {
@@ -208,7 +206,7 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
     public void startCall(List<Integer> userIDs, Integer callRequestId, String realName, String avatar) {
         Log.d(TAG, "start call user: " + userIDs.toString() + " " + realName);
 
-        QBRTCSession session = QBRTCClient.getInstance(reactApplicationContext.getApplicationContext()).createNewSessionWithOpponents(userIDs, QBRTCTypes.QBConferenceType.QB_CONFERENCE_TYPE_VIDEO);
+        QBRTCSession session = QBRTCClient.getInstance(reactApplicationContext).createNewSessionWithOpponents(userIDs, QBRTCTypes.QBConferenceType.QB_CONFERENCE_TYPE_VIDEO);
         this.setSession(session);
 
         Map<String, String> userInfo = new HashMap<>();
@@ -216,10 +214,17 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
         userInfo.put("sessionId", session.getSessionID());
         userInfo.put("realName", realName);
         userInfo.put("avatar", avatar);
-        session.startCall(userInfo);
+        userInfo.put("userId", this.currentUser.getId().toString());
+        this.session.startCall(userInfo);
     }
 
+
     //<editor-fold desc="QBRTCSessionStateCallback">
+    @Override
+    public void onStateChanged(QBRTCSession session, BaseSession.QBRTCSessionState qbrtcSessionState) {
+
+    }
+
     @Override
     public void onConnectedToUser(QBRTCSession qbrtcSession, Integer integer) {
 
@@ -240,6 +245,8 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
     @Override
     public void onLocalVideoTrackReceive(QBRTCSession qbrtcSession, QBRTCVideoTrack qbrtcVideoTrack) {
         Log.d(TAG, "onLocalVideoTrackReceive");
+        if (localViewManager != null)
+            localViewManager.renderVideoTrack(qbrtcVideoTrack);
     }
 
     @Override
@@ -267,7 +274,6 @@ public class QuickbloxHandler implements QBRTCSessionStateCallback, QBRTCClientV
 
     }
 
-    @Override
     public void onError(QBRTCSession qbrtcSession, QBRTCException e) {
 
     }

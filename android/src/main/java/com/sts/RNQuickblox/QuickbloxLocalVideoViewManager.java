@@ -1,5 +1,6 @@
 package com.sts.RNQuickblox;
 
+import com.quickblox.videochat.webrtc.QBMediaStreamManager;
 import com.quickblox.videochat.webrtc.QBRTCCameraVideoCapturer;
 import com.quickblox.videochat.webrtc.QBRTCSession;
 import com.quickblox.videochat.webrtc.view.QBRTCVideoTrack;
@@ -25,9 +26,12 @@ public class QuickbloxLocalVideoViewManager extends QuickbloxVideoViewManager {
     protected QBRTCVideoTrack getVideoTrack() {
         if (QuickbloxHandler.getInstance().getSession() != null) {
             QBRTCSession session = QuickbloxHandler.getInstance().getSession();
-            QBRTCCameraVideoCapturer videoCapturer = (QBRTCCameraVideoCapturer) (session.getMediaStreamManager().getVideoCapturer());
-            videoCapturer.changeCaptureFormat(768, 1024, 30);
-            return session.getMediaStreamManager().getLocalVideoTrack();
+            QBMediaStreamManager mediaStreamManager = session.getMediaStreamManager();
+            if (mediaStreamManager != null) {
+                QBRTCCameraVideoCapturer videoCapturer = (QBRTCCameraVideoCapturer) (mediaStreamManager.getVideoCapturer());
+                videoCapturer.changeCaptureFormat(768, 1024, 30);
+                return mediaStreamManager.getLocalVideoTrack();
+            }
         }
         return null;
     }

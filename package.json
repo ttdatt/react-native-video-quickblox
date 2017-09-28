@@ -22,8 +22,13 @@
   },
   "homepage": "https://github.com/ttdat89/react-native-video-quickblox/blob/master/README.md",
   "peerDependencies": {
+    "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.12",
-    "react-native": "^0.48.3",
-    "prop-types": "^15.5.10"
+    "react-native": "^0.48.4"
+  },
+  "devDependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-native": "^0.48.3"
   }
 }

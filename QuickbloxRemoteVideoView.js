@@ -12,7 +12,7 @@ export default class QuickbloxRemoteVideoView extends React.Component {
     this.onRendered = this.onRendered.bind(this);
   }
 
-  onRendered(event: Event) {
+  onRendered(event) {
     if (this.props.onRendered)
       this.props.onRendered()
   }

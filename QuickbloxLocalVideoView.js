@@ -12,7 +12,7 @@ export default class QuickbloxLocalVideoView extends React.Component {
     this.onRendered = this.onRendered.bind(this);
   }
 
-  onRendered(event: Event) {
+  onRendered(event) {
     if (this.props.onRendered)
       this.props.onRendered()
   }
@@ -25,7 +25,10 @@ export default class QuickbloxLocalVideoView extends React.Component {
     return <NativeQuickbloxLocalVideoView
       {...this.props}
       ref={ci => this.myRef = ci}
-      onChange={this.onRendered}
+      onChange={() => {
+        this.setState({bottom: 0})
+        this.onRendered()
+      }}
     />;
   }
 }

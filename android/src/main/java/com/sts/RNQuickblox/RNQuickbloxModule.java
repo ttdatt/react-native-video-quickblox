@@ -1,6 +1,7 @@
 package com.sts.RNQuickblox;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
@@ -9,11 +10,16 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.ReadableArray;
+import com.facebook.react.bridge.WritableArray;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.google.gson.Gson;
+import com.quickblox.auth.QBAuth;
+import com.quickblox.auth.session.QBSession;
 import com.quickblox.chat.QBChatService;
 import com.quickblox.core.QBEntityCallback;
 import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.core.request.QBPagedRequestBuilder;
 import com.quickblox.core.result.HttpStatus;
 import com.quickblox.users.QBUsers;
 import com.quickblox.users.model.QBUser;
@@ -40,11 +46,13 @@ public class RNQuickbloxModule extends ReactContextBaseJavaModule {
     private static final String SESSION_DID_CLOSE = "SESSION_DID_CLOSE";
 
     private ReactApplicationContext reactApplicationContext;
+    private Gson gson;
 
     public RNQuickbloxModule(final ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactApplicationContext = reactContext;
         QuickbloxHandler.getInstance().setQuickbloxClient(this, reactContext);
+        this.gson = new Gson();
     }
 
     private JavaScriptModule getJSModule() {
@@ -99,6 +107,26 @@ public class RNQuickbloxModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
+    public void getUsers(final Callback callback) {
+        QBPagedRequestBuilder pagedRequestBuilder = new QBPagedRequestBuilder();
+        pagedRequestBuilder.setPage(1);
+        pagedRequestBuilder.setPerPage(50);
+
+        QBUsers.getUsers(pagedRequestBuilder).performAsync(new QBEntityCallback<ArrayList<QBUser>>() {
+            @Override
+            public void onSuccess(ArrayList<QBUser> qbUsers, Bundle bundle) {
+                Log.i(TAG, "Users: " + qbUsers.toString());
+                callback.invoke(gson.toJson(qbUsers));
+            }
+
+            @Override
+            public void onError(QBResponseException e) {
+
+            }
+        });
+    }
+
+    @ReactMethod
     public void callToUsers(ReadableArray userIDs, final Integer callRequestId, final String realName, final String avatar) {
         List<Integer> ids = new ArrayList<>();
 //        ids.add(25581924);
@@ -110,37 +138,32 @@ public class RNQuickbloxModule extends ReactContextBaseJavaModule {
     }
 
     private void login(String userId, String password, final Callback callback) {
-
         final QBUser user = new QBUser(userId, password);
-        user.setId(23838512);
-        user.setFullName("Fuck Tran");
-
-        QBChatService chatService = QBChatService.getInstance();
-        chatService.login(user, new QBEntityCallback() {
+        QBAuth.createSession(user).performAsync(new QBEntityCallback<QBSession>() {
             @Override
-            public void onSuccess(Object o, Bundle bundle) {
-                QuickbloxHandler.getInstance().setCurrentUser(user);
-                QuickbloxHandler.getInstance().init();
-                callback.invoke(user.getId());
+            public void onSuccess(QBSession qbSession, Bundle bundle) {
+                user.setId(qbSession.getUserId());
+                QBChatService chatService = QBChatService.getInstance();
+                chatService.login(user, new QBEntityCallback() {
+                    @Override
+                    public void onSuccess(Object o, Bundle bundle) {
+                        QuickbloxHandler.getInstance().setCurrentUser(user);
+                        QuickbloxHandler.getInstance().init();
+                        callback.invoke(user.getId());
+                    }
+
+                    @Override
+                    public void onError(QBResponseException e) {
+                        callback.invoke(e.getMessage());
+                    }
+                });
             }
 
             @Override
             public void onError(QBResponseException e) {
-                callback.invoke(e.getMessage());
+
             }
         });
-
-//        QBAuth.createSession(user).performAsync(new QBEntityCallback<QBSession>() {
-//            @Override
-//            public void onSuccess(QBSession qbSession, Bundle bundle) {
-//
-//            }
-//
-//            @Override
-//            public void onError(QBResponseException e) {
-//
-//            }
-//        });
     }
 
     @ReactMethod

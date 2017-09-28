@@ -32,7 +32,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.quickblox:quickblox-android-sdk-videochat-webrtc:3.3.0'
+    compile 'com.quickblox:quickblox-android-sdk-videochat-webrtc:+'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.facebook.react:react-native:+'
 }
