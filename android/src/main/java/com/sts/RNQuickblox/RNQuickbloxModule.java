@@ -16,6 +16,7 @@ import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.google.gson.Gson;
 import com.quickblox.auth.QBAuth;
 import com.quickblox.auth.session.QBSession;
+import com.quickblox.auth.session.QBSettings;
 import com.quickblox.chat.QBChatService;
 import com.quickblox.core.QBEntityCallback;
 import com.quickblox.core.exception.QBResponseException;
@@ -23,6 +24,7 @@ import com.quickblox.core.request.QBPagedRequestBuilder;
 import com.quickblox.core.result.HttpStatus;
 import com.quickblox.users.QBUsers;
 import com.quickblox.users.model.QBUser;
+import com.quickblox.videochat.webrtc.QBRTCConfig;
 import com.quickblox.videochat.webrtc.QBRTCSession;
 
 import java.util.ArrayList;
@@ -74,6 +76,15 @@ public class RNQuickbloxModule extends ReactContextBaseJavaModule {
         constants.put(USER_HUNG_UP, USER_HUNG_UP);
         constants.put(SESSION_DID_CLOSE, SESSION_DID_CLOSE);
         return constants;
+    }
+
+    @ReactMethod
+    public void setupQuickblox(String AppId, String authKey, String authSecret, String accountKey) {
+        QBSettings.getInstance().init(reactApplicationContext, AppId, authKey, authSecret);
+        QBSettings.getInstance().setAccountKey(accountKey);
+
+        QBChatService.setDebugEnabled(true);
+        QBRTCConfig.setDebugEnabled(true);
     }
 
     @ReactMethod

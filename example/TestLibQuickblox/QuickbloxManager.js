@@ -28,7 +28,8 @@ export default class QuickbloxManager {
   }
 
   init() {
-    // do something
+    // RNQuickblox.setupQuickblox(APP_ID, AUTH_KEY, AUTH_SECRET, ACCOUNT_KEY)
+    RNQuickblox.setupQuickblox("44519","YqHTqrJPDkAzht3", "fgYy8K3hL6LKHaS","6XDmKdXBfwPuJsWv9Fxp")
   }
 
   addSubscriber(subscriber) {

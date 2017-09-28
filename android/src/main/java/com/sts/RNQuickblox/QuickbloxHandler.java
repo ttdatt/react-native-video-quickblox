@@ -3,6 +3,7 @@ package com.sts.RNQuickblox;
 import android.util.Log;
 
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactMethod;
 import com.quickblox.auth.session.QBSettings;
 import com.quickblox.chat.QBChatService;
 import com.quickblox.chat.QBSignaling;
@@ -32,11 +33,6 @@ import java.util.Map;
 public class QuickbloxHandler implements QBRTCClientVideoTracksCallbacks<QBRTCSession>, QBRTCSessionConnectionCallbacks {
 
     private static final String TAG = QuickbloxHandler.class.getSimpleName();
-
-    static final String APP_ID = "44519";
-    static final String AUTH_KEY = "YqHTqrJPDkAzht3";
-    static final String AUTH_SECRET = "fgYy8K3hL6LKHaS";
-    static final String ACCOUNT_KEY = "6XDmKdXBfwPuJsWv9Fxp";
 
     private static QuickbloxHandler instance;
     private ReactApplicationContext reactApplicationContext;
@@ -75,7 +71,7 @@ public class QuickbloxHandler implements QBRTCClientVideoTracksCallbacks<QBRTCSe
     public void setQuickbloxClient(RNQuickbloxModule quickbloxClient, ReactApplicationContext rctCtx) {
         this.quickbloxClient = quickbloxClient;
         reactApplicationContext = rctCtx;
-        this.setupQuickblox();
+//        this.quickbloxClient.setupQuickblox(APP_ID, AUTH_KEY, AUTH_SECRET, ACCOUNT_KEY);
     }
 
     private RNQuickbloxModule quickbloxClient;
@@ -110,15 +106,6 @@ public class QuickbloxHandler implements QBRTCClientVideoTracksCallbacks<QBRTCSe
     private QBUser currentUser;
 
     public QuickbloxHandler() {
-    }
-
-    private void setupQuickblox() {
-        //        QBSettings.getInstance().init(getApplicationContext(), APP_ID, AUTH_KEY, AUTH_SECRET);
-        QBSettings.getInstance().init(reactApplicationContext, APP_ID, AUTH_KEY, AUTH_SECRET);
-        QBSettings.getInstance().setAccountKey(ACCOUNT_KEY);
-
-        QBChatService.setDebugEnabled(true);
-        QBRTCConfig.setDebugEnabled(true);
     }
 
     public void init() {
