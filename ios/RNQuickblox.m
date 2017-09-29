@@ -123,11 +123,27 @@ RCT_EXPORT_METHOD(rejectCall) {
             if (!error) {
                 QuickbloxHandler.sharedInstance.currentUser = user;
             }
-            completion(@[error ? error : [NSNull null]]);
+            completion(@[error ? error : @(user.ID)]);
         }];
     } errorBlock:^(QBResponse * _Nonnull response) {
         NSError *error = response.error.error;
         completion(@[error ? error : [NSNull null]]);
+    }];
+}
+
+RCT_EXPORT_METHOD(getUsers:(RCTResponseSenderBlock)complete) {
+    QBGeneralResponsePage *pageRequest = [QBGeneralResponsePage responsePageWithCurrentPage:1 perPage:50];
+    [QBRequest usersForPage:pageRequest successBlock:^(QBResponse * _Nonnull response, QBGeneralResponsePage * _Nonnull page, NSArray<QBUUser *> * _Nonnull users) {
+        NSMutableArray *arr = [NSMutableArray arrayWithCapacity:users.count];
+        NSError *error = nil;
+        for (int i = 0; i<users.count; i++) {
+            SerializableQBUser *u = [[SerializableQBUser alloc] initWithQBUUser:users[i]];
+            [arr addObject:u];
+        }
+        NSArray *result = [MTLJSONAdapter JSONArrayFromModels:arr error:&error];
+        complete(@[result]);
+    } errorBlock:^(QBResponse * _Nonnull response) {
+        
     }];
 }
 

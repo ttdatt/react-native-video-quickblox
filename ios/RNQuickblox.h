@@ -15,6 +15,8 @@
 #import <Quickblox/Quickblox.h>
 #import <QuickbloxWebRTC/QuickbloxWebRTC.h>
 
+#import "SerializableQBUser.h"
+
 #define DID_RECEIVE_CALL_SESSION @"DID_RECEIVE_CALL_SESSION"
 #define USER_ACCEPT_CALL @"USER_ACCEPT_CALL"
 #define USER_REJECT_CALL @"USER_REJECT_CALL"

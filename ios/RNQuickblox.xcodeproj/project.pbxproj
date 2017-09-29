@@ -14,6 +14,7 @@
 		3813EBA71F7E00600060F72C /* QuickbloxLocalVideoViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB371F7DF6A60060F72C /* QuickbloxLocalVideoViewManager.m */; };
 		3813EBA81F7E00630060F72C /* QuickbloxRemoteVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB391F7DF6A60060F72C /* QuickbloxRemoteVideoView.m */; };
 		3813EBA91F7E00660060F72C /* QuickbloxRemoteVideoViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB3B1F7DF6A60060F72C /* QuickbloxRemoteVideoViewManager.m */; };
+		38877EA51F7E2B43005AD55F /* SerializableQBUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 38877EA41F7E2B43005AD55F /* SerializableQBUser.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNQuickblox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNQuickblox.m */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,8 @@
 		3813EB3B1F7DF6A60060F72C /* QuickbloxRemoteVideoViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickbloxRemoteVideoViewManager.m; sourceTree = "<group>"; };
 		3813EB3C1F7DF6A60060F72C /* QMSoundManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QMSoundManager.h; sourceTree = "<group>"; };
 		3813EB3D1F7DF6A70060F72C /* QMSoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QMSoundManager.m; sourceTree = "<group>"; };
+		38877EA31F7E2B43005AD55F /* SerializableQBUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerializableQBUser.h; sourceTree = "<group>"; };
+		38877EA41F7E2B43005AD55F /* SerializableQBUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerializableQBUser.m; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNQuickblox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNQuickblox.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNQuickblox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNQuickblox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +98,8 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				38877EA31F7E2B43005AD55F /* SerializableQBUser.h */,
+				38877EA41F7E2B43005AD55F /* SerializableQBUser.m */,
 				3813EB2E1F7DF6A60060F72C /* AVPermisions */,
 				3813EB3C1F7DF6A60060F72C /* QMSoundManager.h */,
 				3813EB3D1F7DF6A70060F72C /* QMSoundManager.m */,
@@ -163,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38877EA51F7E2B43005AD55F /* SerializableQBUser.m in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNQuickblox.m in Sources */,
 				3813EB3F1F7DF6A70060F72C /* QMSoundManager.m in Sources */,
 				3813EBA51F7E00590060F72C /* QBAVCallPermissions.m in Sources */,
@@ -270,6 +276,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"\"../../../ios/Pods/Mantle\"",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
@@ -290,6 +297,7 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
+					"\"../../../ios/Pods/Mantle\"",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
