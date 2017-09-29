@@ -1,5 +1,6 @@
 
 # react-native-video-quickblox
+Only work on Android, will implement on iOS in near future
 
 ## Getting started
 
@@ -36,10 +37,5 @@
 
 
 ## Usage
-```javascript
-import RNQuickblox from 'react-native-video-quickblox';
-
-// TODO: What to do with the module?
-RNQuickblox;
-```
+This [example](https://github.com/ttdat89/react-native-video-quickblox/tree/master/example/TestLibQuickblox) is a little bit messy, but it can help you (I think)
   
