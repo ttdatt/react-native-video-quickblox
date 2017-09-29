@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3813EB3E1F7DF6A70060F72C /* QuickbloxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB311F7DF6A60060F72C /* QuickbloxHandler.m */; };
+		3813EB3F1F7DF6A70060F72C /* QMSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB3D1F7DF6A70060F72C /* QMSoundManager.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNQuickblox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNQuickblox.m */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +26,20 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNQuickblox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNQuickblox.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3813EB2F1F7DF6A60060F72C /* QBAVCallPermissions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBAVCallPermissions.h; sourceTree = "<group>"; };
+		3813EB301F7DF6A60060F72C /* QBAVCallPermissions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QBAVCallPermissions.m; sourceTree = "<group>"; };
+		3813EB311F7DF6A60060F72C /* QuickbloxHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickbloxHandler.m; sourceTree = "<group>"; };
+		3813EB321F7DF6A60060F72C /* QuickbloxHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickbloxHandler.h; sourceTree = "<group>"; };
+		3813EB341F7DF6A60060F72C /* QuickbloxLocalVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickbloxLocalVideoView.h; sourceTree = "<group>"; };
+		3813EB351F7DF6A60060F72C /* QuickbloxLocalVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickbloxLocalVideoView.m; sourceTree = "<group>"; };
+		3813EB361F7DF6A60060F72C /* QuickbloxLocalVideoViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickbloxLocalVideoViewManager.h; sourceTree = "<group>"; };
+		3813EB371F7DF6A60060F72C /* QuickbloxLocalVideoViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickbloxLocalVideoViewManager.m; sourceTree = "<group>"; };
+		3813EB381F7DF6A60060F72C /* QuickbloxRemoteVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickbloxRemoteVideoView.h; sourceTree = "<group>"; };
+		3813EB391F7DF6A60060F72C /* QuickbloxRemoteVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickbloxRemoteVideoView.m; sourceTree = "<group>"; };
+		3813EB3A1F7DF6A60060F72C /* QuickbloxRemoteVideoViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickbloxRemoteVideoViewManager.h; sourceTree = "<group>"; };
+		3813EB3B1F7DF6A60060F72C /* QuickbloxRemoteVideoViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickbloxRemoteVideoViewManager.m; sourceTree = "<group>"; };
+		3813EB3C1F7DF6A60060F72C /* QMSoundManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QMSoundManager.h; sourceTree = "<group>"; };
+		3813EB3D1F7DF6A70060F72C /* QMSoundManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QMSoundManager.m; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNQuickblox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNQuickblox.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNQuickblox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNQuickblox.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,9 +63,39 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3813EB2E1F7DF6A60060F72C /* AVPermisions */ = {
+			isa = PBXGroup;
+			children = (
+				3813EB2F1F7DF6A60060F72C /* QBAVCallPermissions.h */,
+				3813EB301F7DF6A60060F72C /* QBAVCallPermissions.m */,
+			);
+			path = AVPermisions;
+			sourceTree = "<group>";
+		};
+		3813EB331F7DF6A60060F72C /* QuickbloxView */ = {
+			isa = PBXGroup;
+			children = (
+				3813EB341F7DF6A60060F72C /* QuickbloxLocalVideoView.h */,
+				3813EB351F7DF6A60060F72C /* QuickbloxLocalVideoView.m */,
+				3813EB361F7DF6A60060F72C /* QuickbloxLocalVideoViewManager.h */,
+				3813EB371F7DF6A60060F72C /* QuickbloxLocalVideoViewManager.m */,
+				3813EB381F7DF6A60060F72C /* QuickbloxRemoteVideoView.h */,
+				3813EB391F7DF6A60060F72C /* QuickbloxRemoteVideoView.m */,
+				3813EB3A1F7DF6A60060F72C /* QuickbloxRemoteVideoViewManager.h */,
+				3813EB3B1F7DF6A60060F72C /* QuickbloxRemoteVideoViewManager.m */,
+			);
+			path = QuickbloxView;
+			sourceTree = "<group>";
+		};
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				3813EB2E1F7DF6A60060F72C /* AVPermisions */,
+				3813EB3C1F7DF6A60060F72C /* QMSoundManager.h */,
+				3813EB3D1F7DF6A70060F72C /* QMSoundManager.m */,
+				3813EB321F7DF6A60060F72C /* QuickbloxHandler.h */,
+				3813EB311F7DF6A60060F72C /* QuickbloxHandler.m */,
+				3813EB331F7DF6A60060F72C /* QuickbloxView */,
 				B3E7B5881CC2AC0600A0062D /* RNQuickblox.h */,
 				B3E7B5891CC2AC0600A0062D /* RNQuickblox.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -113,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E7B58A1CC2AC0600A0062D /* RNQuickblox.m in Sources */,
+				3813EB3F1F7DF6A70060F72C /* QMSoundManager.m in Sources */,
+				3813EB3E1F7DF6A70060F72C /* QuickbloxHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,8 +251,12 @@
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"../../../ios/Pods/QuickBlox\"",
+					"\"../../../ios/Pods/Quickblox-WebRTC\"",
+				);
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
@@ -219,6 +271,10 @@
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"../../../ios/Pods/QuickBlox\"",
+					"\"../../../ios/Pods/Quickblox-WebRTC\"",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
