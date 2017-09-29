@@ -4,7 +4,7 @@ Only work on Android, will implement on iOS in near future
 
 ## Getting started
 
-`$ npm install react-native-video-quickblox --save`
+`$ npm install react-native-video-quickblox --save` or `yarn add react-native-video-quickblox`
 
 ### Mostly automatic installation
 
