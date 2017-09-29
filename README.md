@@ -1,6 +1,6 @@
 
 # react-native-video-quickblox
-Only work on Android, will implement on iOS in near future
+Quickblox video call for React Native
 
 ## Getting started
 
