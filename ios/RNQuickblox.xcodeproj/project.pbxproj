@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		3813EB3E1F7DF6A70060F72C /* QuickbloxHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB311F7DF6A60060F72C /* QuickbloxHandler.m */; };
 		3813EB3F1F7DF6A70060F72C /* QMSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB3D1F7DF6A70060F72C /* QMSoundManager.m */; };
+		3813EBA51F7E00590060F72C /* QBAVCallPermissions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB301F7DF6A60060F72C /* QBAVCallPermissions.m */; };
+		3813EBA61F7E005E0060F72C /* QuickbloxLocalVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB351F7DF6A60060F72C /* QuickbloxLocalVideoView.m */; };
+		3813EBA71F7E00600060F72C /* QuickbloxLocalVideoViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB371F7DF6A60060F72C /* QuickbloxLocalVideoViewManager.m */; };
+		3813EBA81F7E00630060F72C /* QuickbloxRemoteVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB391F7DF6A60060F72C /* QuickbloxRemoteVideoView.m */; };
+		3813EBA91F7E00660060F72C /* QuickbloxRemoteVideoViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3813EB3B1F7DF6A60060F72C /* QuickbloxRemoteVideoViewManager.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNQuickblox.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNQuickblox.m */; };
 /* End PBXBuildFile section */
 
@@ -160,7 +165,12 @@
 			files = (
 				B3E7B58A1CC2AC0600A0062D /* RNQuickblox.m in Sources */,
 				3813EB3F1F7DF6A70060F72C /* QMSoundManager.m in Sources */,
+				3813EBA51F7E00590060F72C /* QBAVCallPermissions.m in Sources */,
 				3813EB3E1F7DF6A70060F72C /* QuickbloxHandler.m in Sources */,
+				3813EBA71F7E00600060F72C /* QuickbloxLocalVideoViewManager.m in Sources */,
+				3813EBA91F7E00660060F72C /* QuickbloxRemoteVideoViewManager.m in Sources */,
+				3813EBA61F7E005E0060F72C /* QuickbloxLocalVideoView.m in Sources */,
+				3813EBA81F7E00630060F72C /* QuickbloxRemoteVideoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
