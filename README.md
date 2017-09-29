@@ -10,15 +10,40 @@ Only work on Android, will implement on iOS in near future
 
 `$ react-native link react-native-video-quickblox`
 
-### Manual installation
+### Configure Project
 
 
 #### iOS
 
-1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-video-quickblox` and add `RNQuickblox.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNQuickblox.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
-4. Run your project (`Cmd+R`)<
+1. Add Quickblox and Mantle
+Add a `Podfile` to your ios directory with the following content. Then run `pod install` and open the generated .xcworkspace from now on in xcode.
+```
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
+
+target 'YourProject' do
+pod 'Quickblox-WebRTC', '~> 2.6.1'
+pod 'QuickBlox', '~> 2.12'
+pod 'Mantle', '~> 2.1.0'
+end
+```
+
+2. Click on Project → Select Target of interest → Choose **Build Phases** tab → **Link Binary With Libraries** → At the bottom of this list hit + to add libraries.
+
+Here is the list of required Apple library frameworks:
+```
+libicucore.dylib
+libc++.dylib
+libresolv.dylib
+libxml2.dylib
+libz.dylib
+CFNetwork.framework
+GLKit.framework
+MobileCoreServices.framework
+SystemConfiguration.framework
+VideoToolbox.framework
+Accelerate.framework
+```
 
 #### Android
 
