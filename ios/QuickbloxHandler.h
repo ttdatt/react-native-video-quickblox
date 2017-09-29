@@ -16,7 +16,7 @@
 - (void)session:(QBRTCSession *)session receivedRemoteVideoTrack:(QBRTCVideoTrack *)videoTrack fromUser:(NSNumber *)userID;
 @end
 
-@interface QuickbloxHandler : NSObject
+@interface QuickbloxHandler : NSObject <QBRTCClientDelegate>
 @property (weak, nonatomic) RNQuickblox *quickbloxClient;
 @property (weak, nonatomic) id<CustomQuickbloxDelegate> quickbloxDelegate;
 @property (weak, nonatomic) QuickbloxLocalVideoViewManager *localViewManager;
