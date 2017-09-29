@@ -1,6 +1,6 @@
 {
   "name": "react-native-video-quickblox",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "prop-types": "^15.5.10",
-    "react": "^15.6.1",
-    "react-native": "^0.48.3"
+    "react": "16.0.0-alpha.12",
+    "react-native": "^0.48.4"
   }
 }

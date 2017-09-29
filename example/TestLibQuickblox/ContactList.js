@@ -27,7 +27,10 @@ export default class ContactList extends React.Component {
 
   componentDidMount() {
     this.quickbloxManager.getUsers(users => {
-      this.setState({users: JSON.parse(users)})
+      if (typeof (body) === 'string')
+        this.setState({users: JSON.parse(users)})
+      else if (typeof (users) === 'object' && Array.isArray(users))
+        this.setState({users: users})
     })
   }
 

@@ -3434,9 +3434,9 @@ react-devtools-core@^2.5.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
-react-native-video-quickblox@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-video-quickblox/-/react-native-video-quickblox-1.0.3.tgz#9e14ebdccbcae68122d50a9a23a6d8ce9564d44b"
+react-native-video-quickblox@^1.0.6:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-video-quickblox/-/react-native-video-quickblox-1.0.7.tgz#1fb285c00ca72fb24f6ff452f078d95a78bcf885"
 
 react-native@0.48.3:
   version "0.48.3"

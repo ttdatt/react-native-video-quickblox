@@ -31,7 +31,7 @@ export default class Login extends React.Component {
   }
 
   render() {
-    return !this.state.user ? <View>
+    return !this.state.user ? <View style={{paddingTop: 20}}>
         <TextInput
           placeholder='Login name'
           underlineColorAndroid='transparent'
