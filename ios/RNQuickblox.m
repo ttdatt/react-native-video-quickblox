@@ -43,6 +43,13 @@ RCT_EXPORT_MODULE()
 
 #pragma mark - React Export Method
 
+RCT_EXPORT_METHOD(setupQuickblox:(NSString *)appId authKey:(NSString* )authKey authSecret:(NSString *)authSecret accountKey:(NSString *)accountKey) {
+    [QBSettings setApplicationID:[appId integerValue]];
+    [QBSettings setAuthKey:authKey];
+    [QBSettings setAuthSecret:authSecret];
+    [QBSettings setAccountKey:accountKey];
+}
+
 RCT_EXPORT_METHOD(connectUser:(NSString *)userID password:(NSString *)pwd completion:(RCTResponseSenderBlock)callback) {
     [self login:userID pwd:pwd completion:callback];
 }

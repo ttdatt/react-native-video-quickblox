@@ -16,12 +16,6 @@
 {
     self = [super init];
     if (self) {
-        // Initialize Quickblox
-        [QBSettings setApplicationID:53525];
-        [QBSettings setAuthKey:@"PLmye3xQsJ3-Gsr"];
-        [QBSettings setAuthSecret:@"TUDPphBZK7r5dVY"];
-        [QBSettings setAccountKey:@"6XDmKdXBfwPuJsWv9Fxp"];
-        
         //    [QBRTCConfig setAnswerTimeInterval:60];
         //    [QBRTCConfig setDialingTimeInterval:5];
         //    [QBRTCConfig setStatsReportTimeInterval:1.f];
