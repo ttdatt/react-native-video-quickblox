@@ -32,7 +32,7 @@ export default class Login extends React.Component {
 
   render() {
     return !this.state.user ? <View style={{paddingTop: 20}}>
-        <Text>You can use dat.tran or phuc.tran with pass is 12345678</Text>
+        <Text>login name: dat.tran or phuc.tran - password: 12345678</Text>
         <TextInput
           placeholder='Login name'
           underlineColorAndroid='transparent'

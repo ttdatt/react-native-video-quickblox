@@ -71,7 +71,7 @@ export default class QuickbloxManager {
     RNQuickblox.hangUp()
   }
 
-  callUsers(userIds: Array, callId, realName, avatar) {
+  callUsers(userIds, callId, realName, avatar) {
     RNQuickblox.callToUsers(userIds, callId, realName, avatar)
   }
 
