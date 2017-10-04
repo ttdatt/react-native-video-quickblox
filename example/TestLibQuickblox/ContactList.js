@@ -27,7 +27,7 @@ export default class ContactList extends React.Component {
 
   componentDidMount() {
     this.quickbloxManager.getUsers(users => {
-      if (typeof (body) === 'string')
+      if (typeof (users) === 'string')
         this.setState({users: JSON.parse(users)})
       else if (typeof (users) === 'object' && Array.isArray(users))
         this.setState({users: users})
@@ -50,6 +50,7 @@ export default class ContactList extends React.Component {
   render() {
     return <View>
       <Text>{`userId: ${this.props.currentUser}`}</Text>
+      <Text>Click to call</Text>
       <FlatList
         keyboardShouldPersistTaps='always'
         style={{backgroundColor: 'white'}}

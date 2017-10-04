@@ -17,7 +17,7 @@ export default class Login extends React.Component {
     super()
     this.state = {
       userName: '',
-      password: '',
+      password: '12345678',
       user: null
     }
 
@@ -32,6 +32,7 @@ export default class Login extends React.Component {
 
   render() {
     return !this.state.user ? <View style={{paddingTop: 20}}>
+        <Text>You can use dat.tran or phuc.tran with pass is 12345678</Text>
         <TextInput
           placeholder='Login name'
           underlineColorAndroid='transparent'
@@ -41,7 +42,7 @@ export default class Login extends React.Component {
           underlineColorAndroid='transparent'
           onChangeText={(text) => this.setState({password: text})}/>
         <Button onPress={() => this.login()}
-                title="Learn More"/>
+                title="Login"/>
       </View>
       : <ContactList currentUser={this.state.user}
                      callSuccess={this.props.callSuccess}/>
