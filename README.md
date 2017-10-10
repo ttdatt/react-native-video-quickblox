@@ -48,7 +48,7 @@ Accelerate.framework
 ```
 
 #### Android
-Copy folder `jniLibs` in `https://github.com/ttdat89/react-native-video-quickblox/tree/master/example/TestLibQuickblox/android/app/src/main/` to your Android project
+Copy folder [jniLibs](https://github.com/ttdat89/react-native-video-quickblox/tree/master/example/TestLibQuickblox/android/app/src/main/jniLibs) in [https://github.com/ttdat89/react-native-video-quickblox/tree/master/example/TestLibQuickblox/android/app/src/main/](https://github.com/ttdat89/react-native-video-quickblox/tree/master/example/TestLibQuickblox/android/app/src/main/) to your Android project
 
 
 ## Usage
