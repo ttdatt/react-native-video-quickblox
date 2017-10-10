@@ -1,0 +1,21 @@
+PODS:
+  - Mantle (2.1.0):
+    - Mantle/extobjc (= 2.1.0)
+  - Mantle/extobjc (2.1.0)
+  - QuickBlox (2.12)
+  - Quickblox-WebRTC (2.6.1):
+    - QuickBlox (>= 2.7)
+
+DEPENDENCIES:
+  - Mantle
+  - QuickBlox
+  - Quickblox-WebRTC
+
+SPEC CHECKSUMS:
+  Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
+  QuickBlox: 5c0b21dc44a94e4ffb2e8b8eb2db606a635d1931
+  Quickblox-WebRTC: 496447d228663836d6372cdb8e63affa46fe5039
+
+PODFILE CHECKSUM: d117d189af4788867c86a9425fcfed593b20a391
+
+COCOAPODS: 1.2.0

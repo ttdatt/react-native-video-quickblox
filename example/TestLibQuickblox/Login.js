@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import QuickbloxManager from './QuickbloxManager';
 import ContactList from './ContactList';
+import IndicatorDialog from './IndicatorDialog'
 
 export default class Login extends React.Component {
 
@@ -18,15 +19,17 @@ export default class Login extends React.Component {
     this.state = {
       userName: '',
       password: '12345678',
-      user: null
+      user: null,
+      waiting: false
     }
 
     this.quickbloxManager = new QuickbloxManager()
   }
 
   login = () => {
+    this.setState({waiting: true})
     this.quickbloxManager.login(this.state.userName, this.state.password, (qbId) => {
-      this.setState({user: qbId})
+      this.setState({waiting: false, user: qbId})
     })
   }
 
@@ -43,6 +46,7 @@ export default class Login extends React.Component {
           onChangeText={(text) => this.setState({password: text})}/>
         <Button onPress={() => this.login()}
                 title="Login"/>
+        {this.state.waiting && <IndicatorDialog message='Please wait'/>}
       </View>
       : <ContactList currentUser={this.state.user}
                      callSuccess={this.props.callSuccess}/>
