@@ -6,8 +6,6 @@ Quickblox video call for React Native
 
 `$ npm install react-native-video-quickblox --save` or `yarn add react-native-video-quickblox`
 
-It may take some time to complete download to node_modules. Please wait
-
 ### Mostly automatic installation
 
 `$ react-native link react-native-video-quickblox`
