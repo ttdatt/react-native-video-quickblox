@@ -3,7 +3,7 @@ package com.sts.RNQuickblox;
 import com.quickblox.videochat.webrtc.view.QBRTCVideoTrack;
 
 /**
- * Created by sts on 3/23/17.
+ * Created by Dat Tran on 3/23/17.
  */
 
 public class QuickbloxRemoteVideoViewManager extends QuickbloxVideoViewManager {

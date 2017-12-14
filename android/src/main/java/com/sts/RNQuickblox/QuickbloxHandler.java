@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by sts on 3/22/17.
+ * Created by Dat Tran on 3/22/17.
  */
 
 public class QuickbloxHandler implements QBRTCClientVideoTracksCallbacks<QBRTCSession>, QBRTCSessionConnectionCallbacks {

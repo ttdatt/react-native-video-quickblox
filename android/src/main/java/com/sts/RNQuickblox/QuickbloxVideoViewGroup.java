@@ -8,7 +8,7 @@ import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
 
 /**
- * Created by sts on 4/19/17.
+ * Created by Dat Tran on 4/19/17.
  */
 
 public class QuickbloxVideoViewGroup extends RelativeLayout {

@@ -8,7 +8,7 @@ import android.view.SurfaceHolder;
 import com.quickblox.videochat.webrtc.view.QBRTCSurfaceView;
 
 /**
- * Created by sts on 3/27/17.
+ * Created by Dat Tran on 3/27/17.
  */
 
 public class QBRTCRecordSurfaceView extends QBRTCSurfaceView {

@@ -12,7 +12,7 @@ import org.webrtc.RendererCommon;
 import org.webrtc.VideoRenderer;
 
 /**
- * Created by sts on 3/28/17.
+ * Created by Dat Tran on 3/28/17.
  */
 
 public class QuickbloxVideoViewManager extends ViewGroupManager<ViewGroup> {

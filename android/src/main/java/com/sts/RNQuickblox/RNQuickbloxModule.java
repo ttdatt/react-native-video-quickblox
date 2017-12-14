@@ -35,7 +35,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * Created by sts on 3/22/17.
+ * Created by Dat Tran on 3/22/17.
  */
 
 public class RNQuickbloxModule extends ReactContextBaseJavaModule {
