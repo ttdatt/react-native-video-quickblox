@@ -3,7 +3,7 @@
 //  RNQuickblox
 //
 //  Created by dat tran on 9/29/17.
-//  Copyright © 2017 Facebook. All rights reserved.
+//  Copyright © 2017 Dat Tran. All rights reserved.
 //
 
 #import "QuickbloxHandler.h"
