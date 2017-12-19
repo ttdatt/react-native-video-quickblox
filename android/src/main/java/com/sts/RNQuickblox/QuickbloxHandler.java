@@ -132,7 +132,7 @@ public class QuickbloxHandler implements QBRTCClientVideoTracksCallbacks<QBRTCSe
 
                 setSession(qbrtcSession);
                 //[self.localViewManager attachLocalCameraStream:self.session];
-                quickbloxClient.receiveCallSession(session, Integer.valueOf(session.getUserInfo().get("userId")));
+                quickbloxClient.receiveCallSession(session, qbrtcSession.getCallerID());
             }
 
             @Override
