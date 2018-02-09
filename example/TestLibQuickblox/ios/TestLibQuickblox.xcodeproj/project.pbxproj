@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -157,6 +158,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNQuickblox;
+		};
+		38ED01DE202D7E2800A5D0E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDAA0129FF584C91BB4BD43B /* RNSpinkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
+			remoteInfo = RNSpinkit;
+		};
+		38ED01E0202D7E2800A5D0E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDAA0129FF584C91BB4BD43B /* RNSpinkit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 641194871EC9FD4A00D4FC03;
+			remoteInfo = "RNSpinkit-tvOS";
 		};
 		38FE414D1F7D05BD0091BADB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -329,14 +344,14 @@
 		3813EB9E1F7DFFEF0060F72C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		4EF8317EDCDE8D1A48B132EA /* Pods-TestLibQuickblox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestLibQuickblox.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestLibQuickblox/Pods-TestLibQuickblox.release.xcconfig"; sourceTree = "<group>"; };
 		55517A6D367C495A80948CF5 /* libRNQuickblox.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNQuickblox.a; sourceTree = "<group>"; };
+		5985BEE136AD4AC59B2BCE66 /* libRNSpinkit.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSpinkit.a; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		651E20DC72A1C10DEC095716 /* libPods-TestLibQuickblox.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestLibQuickblox.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B54D294ADDFB4B038848DCC6 /* RNQuickblox.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNQuickblox.xcodeproj; path = "../node_modules/react-native-video-quickblox/ios/RNQuickblox.xcodeproj"; sourceTree = "<group>"; };
-		FDAA0129FF584C91BB4BD43B /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; name = "RNSpinkit.xcodeproj"; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		5985BEE136AD4AC59B2BCE66 /* libRNSpinkit.a */ = {isa = PBXFileReference; name = "libRNSpinkit.a"; path = "libRNSpinkit.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		FDAA0129FF584C91BB4BD43B /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSpinkit.xcodeproj; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,10 +540,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		38ED01DA202D7E2800A5D0E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				38ED01DF202D7E2800A5D0E4 /* libRNSpinkit.a */,
+				38ED01E1202D7E2800A5D0E4 /* libRNSpinkit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		38FE41471F7D05BC0091BADB /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				55517A6D367C495A80948CF5 /* libRNQuickblox.a */,
+				5985BEE136AD4AC59B2BCE66 /* libRNSpinkit.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -815,6 +840,10 @@
 					ProductGroup = 388E51601F7DE6BE002FDC52 /* Products */;
 					ProjectRef = B54D294ADDFB4B038848DCC6 /* RNQuickblox.xcodeproj */;
 				},
+				{
+					ProductGroup = 38ED01DA202D7E2800A5D0E4 /* Products */;
+					ProjectRef = FDAA0129FF584C91BB4BD43B /* RNSpinkit.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -916,6 +945,20 @@
 			fileType = archive.ar;
 			path = libRNQuickblox.a;
 			remoteRef = 388E51821F7DE6BE002FDC52 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38ED01DF202D7E2800A5D0E4 /* libRNSpinkit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSpinkit.a;
+			remoteRef = 38ED01DE202D7E2800A5D0E4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		38ED01E1202D7E2800A5D0E4 /* libRNSpinkit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNSpinkit.a;
+			remoteRef = 38ED01E0202D7E2800A5D0E4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		38FE414E1F7D05BD0091BADB /* libRCTBlob-tvOS.a */ = {
@@ -1314,7 +1357,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dattran.TestLibQuickblox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dattran.TestLibQuickblox111;
 				PRODUCT_NAME = TestLibQuickblox;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1346,7 +1389,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dattran.TestLibQuickblox;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dattran.TestLibQuickblox111;
 				PRODUCT_NAME = TestLibQuickblox;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
