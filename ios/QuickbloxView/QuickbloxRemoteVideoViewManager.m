@@ -28,7 +28,7 @@ RCT_EXPORT_VIEW_PROPERTY(onReceivedVideoTrack, RCTBubblingEventBlock)
 }
 
 - (void)session:(QBRTCSession *)session receivedRemoteVideoTrack:(QBRTCVideoTrack *)videoTrack fromUser:(NSNumber *)userID {
-  self.videoTrack = [session remoteVideoTrackWithUserID:userID];
+//  self.videoTrack = [session remoteVideoTrackWithUserID:userID];
   
   dispatch_async(dispatch_get_main_queue(), ^{
     RCTLogInfo(@"Set Remote Video Track with %@ when received video track", QuickbloxHandler.sharedInstance.caller);

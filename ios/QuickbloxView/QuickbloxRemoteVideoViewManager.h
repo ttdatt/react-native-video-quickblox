@@ -17,5 +17,5 @@
 @interface QuickbloxRemoteVideoViewManager : RCTViewManager <CustomQuickbloxDelegate>
 @property (weak, nonatomic) QuickbloxRemoteVideoView *videoView;
 //@property (weak, nonatomic) QBRTCRemoteVideoView *remoteView;
-@property (strong, nonatomic) QBRTCVideoTrack *videoTrack;
+//@property (strong, nonatomic) QBRTCVideoTrack *videoTrack;
 @end
