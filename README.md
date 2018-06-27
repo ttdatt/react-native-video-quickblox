@@ -1,5 +1,5 @@
 
-# react-native-video-quickblox [![npm version](https://badge.fury.io/js/react-native-video-quickblox.svg)](https://badge.fury.io/js/react-native-video-quickblox)
+# react-native-video-quickblox [![npm version](https://badge.fury.io/js/react-native-video-quickblox.svg)](https://badge.fury.io/js/react-native-video-quickblox) [![npm](https://img.shields.io/npm/dt/react-native-video-quickblox.svg)](https://www.npmjs.com/package/react-native-video-quickblox)
 Quickblox video call for React Native
 
 ## Getting started
